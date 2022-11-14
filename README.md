@@ -13,3 +13,5 @@ WCF bruges primært til SOAP. Der kan dog laves et json endpoint, hvilket jo ikk
 Hvorfor SOAP i 2022? Det er et godt spørgsmål. Det korte svar er: Fordi det er det nemmeste for os. Det går lynhurtigt at lave ændringer, da koden hurtigt bliver spejlet via Service referencen (en Visual Studio -feature). Desuden er der stadig ting, som SOAP er bedst til, f.eks. transaktioner på tværs af kald.
 
 I øvrigt er det da også rart at kunne tilbyde begge ting, om end den såkaldte "REST"-del ikke er så gennemført som et ægte REST-api. Vi har dog ikke oplevet nogen problemer og derfor har det endnu ikke stået øverst på ønskelisten at lave det om.
+
+Det primære API-kode findes i MainWindow.xaml.cs
