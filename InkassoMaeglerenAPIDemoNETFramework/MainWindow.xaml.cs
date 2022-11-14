@@ -23,14 +23,14 @@ namespace InkassoMaeglerenAPIDemoNETFramework
         SystemOneSoapServiceClient soapClient;
         HttpClient httpClient;
 
-        const int DEMOCASETYPEID = 63;
-
         enum API { SOAP, REST }
 
         API currentAPI = API.REST;
 
         string serviceAddress = "https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc";
-        string apiToken = "54ijnyio456hnuyoi54hnhg";
+
+        string apiToken = "";
+        int DEMOCASETYPEID = ;
 
         public MainWindow()
         {
