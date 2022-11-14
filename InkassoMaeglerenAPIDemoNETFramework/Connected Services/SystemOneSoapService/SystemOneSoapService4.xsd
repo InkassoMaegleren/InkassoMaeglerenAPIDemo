@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MainAPIWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MainAPIWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAct2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Act2" nillable="true" type="tns:Act2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAct2" nillable="true" type="tns:ArrayOfAct2" />
+  <xs:complexType name="Act2">
+    <xs:sequence>
+      <xs:element name="CaseType" nillable="true" type="xs:string" />
+      <xs:element name="Creditor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExitDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExitReason" nillable="true" type="xs:string" />
+      <xs:element name="ImportDateString" nillable="true" type="xs:string" />
+      <xs:element name="RefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deposits" nillable="true" type="tns:ArrayOfDeposit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Act2" nillable="true" type="tns:Act2" />
+  <xs:complexType name="ArrayOfDeposit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Deposit" nillable="true" type="tns:Deposit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeposit" nillable="true" type="tns:ArrayOfDeposit" />
+  <xs:complexType name="Deposit">
+    <xs:sequence>
+      <xs:element name="DepositDate" nillable="true" type="xs:string" />
+      <xs:element name="DepositId" type="xs:int" />
+      <xs:element name="DepositedAmount" type="xs:decimal" />
+      <xs:element name="ImportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="costDeposits" nillable="true" type="tns:ArrayOfCostDeposit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Deposit" nillable="true" type="tns:Deposit" />
+  <xs:complexType name="ArrayOfCostDeposit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CostDeposit" nillable="true" type="tns:CostDeposit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCostDeposit" nillable="true" type="tns:ArrayOfCostDeposit" />
+  <xs:complexType name="CostDeposit">
+    <xs:sequence>
+      <xs:element name="AmountToClient" type="xs:decimal" />
+      <xs:element name="AmountToDebtCollector" type="xs:decimal" />
+      <xs:element name="CostTypeId" type="xs:int" />
+      <xs:element name="CostTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CostDeposit" nillable="true" type="tns:CostDeposit" />
+  <xs:complexType name="IncomingDeposit">
+    <xs:sequence>
+      <xs:element name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DebtorName" nillable="true" type="xs:string" />
+      <xs:element name="DepositDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IncomingDeposit" nillable="true" type="tns:IncomingDeposit" />
+  <xs:complexType name="ArrayOfStatusUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusUpdate" nillable="true" type="tns:StatusUpdate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusUpdate" nillable="true" type="tns:ArrayOfStatusUpdate" />
+  <xs:complexType name="StatusUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NewStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusUpdate" nillable="true" type="tns:StatusUpdate" />
+  <xs:complexType name="ArrayOfPaymentSpecificationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentSpecificationItem" nillable="true" type="tns:PaymentSpecificationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentSpecificationItem" nillable="true" type="tns:ArrayOfPaymentSpecificationItem" />
+  <xs:complexType name="PaymentSpecificationItem">
+    <xs:sequence>
+      <xs:element name="Amount" type="xs:decimal" />
+      <xs:element name="CaseType" nillable="true" type="xs:string" />
+      <xs:element name="Cost" nillable="true" type="xs:string" />
+      <xs:element name="DepositDate" nillable="true" type="xs:string" />
+      <xs:element name="DepositId" type="xs:int" />
+      <xs:element name="ImportTime" nillable="true" type="xs:string" />
+      <xs:element name="RefNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentSpecificationItem" nillable="true" type="tns:PaymentSpecificationItem" />
+  <xs:complexType name="ArrayOfExitReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExitReport" nillable="true" type="tns:ExitReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExitReport" nillable="true" type="tns:ArrayOfExitReport" />
+  <xs:complexType name="ExitReport">
+    <xs:sequence>
+      <xs:element name="ActId" type="xs:int" />
+      <xs:element name="CaseType" nillable="true" type="xs:string" />
+      <xs:element name="Creditor" nillable="true" type="xs:string" />
+      <xs:element name="CreditorId" type="xs:int" />
+      <xs:element minOccurs="0" name="Exit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExitTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExitTimeString" nillable="true" type="xs:string" />
+      <xs:element name="ImportDate" type="xs:dateTime" />
+      <xs:element name="ImportDateString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidTo" nillable="true" type="xs:string" />
+      <xs:element name="RefNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExitReport" nillable="true" type="tns:ExitReport" />
+  <xs:complexType name="ArrayOfPaymentPlanItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentPlanItem" nillable="true" type="tns:PaymentPlanItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentPlanItem" nillable="true" type="tns:ArrayOfPaymentPlanItem" />
+  <xs:complexType name="PaymentPlanItem">
+    <xs:sequence>
+      <xs:element name="Amount" type="xs:decimal" />
+      <xs:element name="Date" nillable="true" type="xs:string" />
+      <xs:element name="Interest" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentPlanItem" nillable="true" type="tns:PaymentPlanItem" />
+  <xs:complexType name="ArrayOfUserAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAction" nillable="true" type="tns:UserAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserAction" nillable="true" type="tns:ArrayOfUserAction" />
+  <xs:complexType name="UserAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAction" nillable="true" type="tns:UserAction" />
+</xs:schema>

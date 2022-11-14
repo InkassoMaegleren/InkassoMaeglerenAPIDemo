@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="SystemOneSoapService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_SystemOneSoapService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MainAPIWCF" />
+      <xsd:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DBTool" />
+      <xsd:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SystemOneSoapService_TestConnectionGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectionGet" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_TestConnectionGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectionGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_TestConnectionPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectionPost" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_TestConnectionPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectionPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetActs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActs" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetActs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_ExitAct_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExitAct" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_ExitAct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExitActResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_Deposit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Deposit" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_Deposit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetStatusUpdates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusUpdates" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetStatusUpdates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_ImportActDirect_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportActDirect" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_ImportActDirect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportActDirectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_UpdateAct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAct" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_UpdateAct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_ImportAct_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportAct" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_ImportAct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportActResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetPaymentSpecification_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentSpecification" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetPaymentSpecification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentSpecificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_EndSupply_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndSupply" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_EndSupply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndSupplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetExitReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExitReport" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetExitReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExitReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_CreatePaymentPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaymentPlan" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_CreatePaymentPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaymentPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_IsNotificationStoredProceduresStillRunning_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsNotificationStoredProceduresStillRunning" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_IsNotificationStoredProceduresStillRunning_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsNotificationStoredProceduresStillRunningResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetActionsToday_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionsToday" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetActionsToday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionsTodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetWNSChannelToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWNSChannelToken" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_GetWNSChannelToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWNSChannelTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_SetWNSChannelToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWNSChannelToken" />
+  </wsdl:message>
+  <wsdl:message name="SystemOneSoapService_SetWNSChannelToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWNSChannelTokenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SystemOneSoapService">
+    <wsdl:operation name="TestConnectionGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/TestConnectionGet" message="tns:SystemOneSoapService_TestConnectionGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/TestConnectionGetResponse" message="tns:SystemOneSoapService_TestConnectionGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnectionPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/TestConnectionPost" message="tns:SystemOneSoapService_TestConnectionPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/TestConnectionPostResponse" message="tns:SystemOneSoapService_TestConnectionPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActs">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/GetActs" message="tns:SystemOneSoapService_GetActs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/GetActsResponse" message="tns:SystemOneSoapService_GetActs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExitAct">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/ExitAct" message="tns:SystemOneSoapService_ExitAct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/ExitActResponse" message="tns:SystemOneSoapService_ExitAct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Deposit">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/Deposit" message="tns:SystemOneSoapService_Deposit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/DepositResponse" message="tns:SystemOneSoapService_Deposit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusUpdates">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/GetStatusUpdates" message="tns:SystemOneSoapService_GetStatusUpdates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/GetStatusUpdatesResponse" message="tns:SystemOneSoapService_GetStatusUpdates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportActDirect">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/ImportActDirect" message="tns:SystemOneSoapService_ImportActDirect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/ImportActDirectResponse" message="tns:SystemOneSoapService_ImportActDirect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAct">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/UpdateAct" message="tns:SystemOneSoapService_UpdateAct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/UpdateActResponse" message="tns:SystemOneSoapService_UpdateAct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportAct">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/ImportAct" message="tns:SystemOneSoapService_ImportAct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/ImportActResponse" message="tns:SystemOneSoapService_ImportAct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentSpecification">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/GetPaymentSpecification" message="tns:SystemOneSoapService_GetPaymentSpecification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/GetPaymentSpecificationResponse" message="tns:SystemOneSoapService_GetPaymentSpecification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndSupply">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/EndSupply" message="tns:SystemOneSoapService_EndSupply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/EndSupplyResponse" message="tns:SystemOneSoapService_EndSupply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExitReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/GetExitReport" message="tns:SystemOneSoapService_GetExitReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/GetExitReportResponse" message="tns:SystemOneSoapService_GetExitReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePaymentPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/CreatePaymentPlan" message="tns:SystemOneSoapService_CreatePaymentPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/CreatePaymentPlanResponse" message="tns:SystemOneSoapService_CreatePaymentPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsNotificationStoredProceduresStillRunning">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/IsNotificationStoredProceduresStillRunning" message="tns:SystemOneSoapService_IsNotificationStoredProceduresStillRunning_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/IsNotificationStoredProceduresStillRunningResponse" message="tns:SystemOneSoapService_IsNotificationStoredProceduresStillRunning_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActionsToday">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/GetActionsToday" message="tns:SystemOneSoapService_GetActionsToday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/GetActionsTodayResponse" message="tns:SystemOneSoapService_GetActionsToday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWNSChannelToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/GetWNSChannelToken" message="tns:SystemOneSoapService_GetWNSChannelToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/GetWNSChannelTokenResponse" message="tns:SystemOneSoapService_GetWNSChannelToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetWNSChannelToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/SystemOneSoapService/SetWNSChannelToken" message="tns:SystemOneSoapService_SetWNSChannelToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SystemOneSoapService/SetWNSChannelTokenResponse" message="tns:SystemOneSoapService_SetWNSChannelToken_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpsBinding_SystemOneSoapService" type="tns:SystemOneSoapService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_SystemOneSoapService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestConnectionGet">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/TestConnectionGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnectionPost">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/TestConnectionPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActs">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/GetActs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitAct">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/ExitAct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deposit">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/Deposit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusUpdates">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/GetStatusUpdates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportActDirect">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/ImportActDirect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAct">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/UpdateAct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportAct">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/ImportAct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentSpecification">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/GetPaymentSpecification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSupply">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/EndSupply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExitReport">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/GetExitReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePaymentPlan">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/CreatePaymentPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNotificationStoredProceduresStillRunning">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/IsNotificationStoredProceduresStillRunning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActionsToday">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/GetActionsToday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWNSChannelToken">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/GetWNSChannelToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetWNSChannelToken">
+      <soap:operation soapAction="http://tempuri.org/SystemOneSoapService/SetWNSChannelToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SystemOneSoapService">
+    <wsdl:port name="BasicHttpsBinding_SystemOneSoapService" binding="tns:BasicHttpsBinding_SystemOneSoapService">
+      <soap:address location="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

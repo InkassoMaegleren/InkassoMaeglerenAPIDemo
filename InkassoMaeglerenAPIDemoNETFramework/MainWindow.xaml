@@ -1,0 +1,48 @@
+﻿<Window x:Class="InkassoMaeglerenAPIDemoNETFramework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InkassoMaeglerenAPIDemoNETFramework"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Initialized="Window_Initialized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" x:Name="btn_APISwitch" Content="REST Active" Width="300" Click="btn_APISwitch_Click" ToolTip="Use this button to switch between SOAP and REST calls"/>
+
+        <GroupBox Grid.Row="1" Header="Calls">
+            <StackPanel>
+                <Button x:Name="btn_TestConnectionGet" Content="TestConnectionGet" IsEnabled="True" Click="btn_TestConnectionGet_Click" />
+                <Button x:Name="btn_TestConnectionPost" Content="TestConnectionPost" IsEnabled="True" Click="btn_TestConnectionPost_Click" />
+                <Button x:Name="btn_GetActs" Content="GetActs" IsEnabled="False" Click="btn_GetActs_Click" />
+                <Button x:Name="btn_ExitAct" Content="ExitAct" IsEnabled="False" Click="btn_ExitAct_Click" />
+                <Button x:Name="btn_Deposit" Content="Deposit" IsEnabled="True" Click="btn_Deposit_Click" />
+                <Button x:Name="btn_ImportActDirect" Content="ImportActDirect" IsEnabled="True" Click="btn_ImportActDirect_Click" />
+                <Button x:Name="btn_UpdateAct" Content="UpdateAct" IsEnabled="False" Click="btn_UpdateAct_Click" />
+                <Button x:Name="btn_ImportActToFile" Content="ImportAct (To import file)" IsEnabled="False" Click="btn_ImportActToFile_Click" />
+                <Button x:Name="btn_CreatePaymentPlan" Content="CreatePaymentPlan" IsEnabled="False" Click="btn_CreatePaymentPlan_Click" />
+            </StackPanel>
+        </GroupBox>
+
+        
+
+        <GroupBox Grid.Row="2" Header="Output">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBox  Grid.Row="0" x:Name="tb_Output" Height="100" AcceptsReturn="True"/>
+                <DataGrid Grid.Row="1" x:Name="dg_Data"/>
+            </Grid>
+        </GroupBox>
+
+        
+    </Grid>
+</Window>

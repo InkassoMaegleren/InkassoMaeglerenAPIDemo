@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DBTool" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DBTool" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Act">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="caseOriginalCreditor" nillable="true" type="xs:string" />
+      <xs:element name="caseReferenceId" nillable="true" type="xs:string" />
+      <xs:element name="caseTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="debtors" nillable="true" type="tns:ArrayOfDebtor" />
+      <xs:element minOccurs="0" name="debts" nillable="true" type="tns:ArrayOfDebt" />
+      <xs:element minOccurs="0" name="decision" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="extraFields" nillable="true" type="tns:ActExtraFields" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Act" nillable="true" type="tns:Act" />
+  <xs:complexType name="ArrayOfDebtor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Debtor" nillable="true" type="tns:Debtor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDebtor" nillable="true" type="tns:ArrayOfDebtor" />
+  <xs:complexType name="Debtor">
+    <xs:sequence>
+      <xs:element name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="attention" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="birthday" nillable="true" type="xs:string" />
+      <xs:element name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="coAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cpr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element name="postalCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Debtor" nillable="true" type="tns:Debtor" />
+  <xs:complexType name="ArrayOfDebt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Debt" nillable="true" type="tns:Debt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDebt" nillable="true" type="tns:ArrayOfDebt" />
+  <xs:complexType name="Debt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="compensationFee" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="dueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="extraFields" nillable="true" type="tns:DebtExtraFields" />
+      <xs:element minOccurs="0" name="fee" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="interestRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="interestStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="invoiceDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="invoiceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="otherFees" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="principal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Debt" nillable="true" type="tns:Debt" />
+  <xs:complexType name="DebtExtraFields">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraFields" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraFieldsData" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DebtExtraFields" nillable="true" type="tns:DebtExtraFields" />
+  <xs:complexType name="ActExtraFields">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraFields" nillable="true" type="q3:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraFieldsData" nillable="true" type="q4:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActExtraFields" nillable="true" type="tns:ActExtraFields" />
+</xs:schema>

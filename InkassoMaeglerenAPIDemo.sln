@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkassoMaeglerenAPIDemoNETFramework", "InkassoMaeglerenAPIDemoNETFramework\InkassoMaeglerenAPIDemoNETFramework.csproj", "{217A4DD0-EEAF-44A7-85C1-FF708BC3D63B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkassoMaeglerenAPIDemoNETCore", "InkassoMaeglerenAPIDemoNETCore\InkassoMaeglerenAPIDemoNETCore.csproj", "{9E971434-4A2F-4315-9D45-24FFA2889B39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{217A4DD0-EEAF-44A7-85C1-FF708BC3D63B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217A4DD0-EEAF-44A7-85C1-FF708BC3D63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217A4DD0-EEAF-44A7-85C1-FF708BC3D63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217A4DD0-EEAF-44A7-85C1-FF708BC3D63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E971434-4A2F-4315-9D45-24FFA2889B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E971434-4A2F-4315-9D45-24FFA2889B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E971434-4A2F-4315-9D45-24FFA2889B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E971434-4A2F-4315-9D45-24FFA2889B39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E958EED8-E143-471D-A679-21B5B2839CE7}
+	EndGlobalSection
+EndGlobal

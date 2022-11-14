@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MainAPIWCF" />
+  <xs:import schemaLocation="https://inkassomaeglerenwcfapidevelop.azurewebsites.net/SystemOneSoapService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DBTool" />
+  <xs:element name="TestConnectionGet">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnectionGetResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnectionPost">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnectionPostResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="caseTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDateString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endDateString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="refNosString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MainAPIWCF" minOccurs="0" name="GetActsResult" nillable="true" type="q1:ArrayOfAct2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExitAct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="caseReferenceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExitActResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Deposit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="caseReferenceId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MainAPIWCF" minOccurs="0" name="deposit" nillable="true" type="q2:IncomingDeposit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusUpdates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusUpdatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MainAPIWCF" minOccurs="0" name="GetStatusUpdatesResult" nillable="true" type="q3:ArrayOfStatusUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportActDirect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="allDebtsBelongToAllDebtors" type="xs:boolean" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DBTool" minOccurs="0" name="actImport" nillable="true" type="q4:Act" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportActDirectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="caseReferenceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="allDebtsBelongToAllDebtors" type="xs:boolean" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DBTool" minOccurs="0" name="debtImport" nillable="true" type="q5:Debt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateActResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportAct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DBTool" minOccurs="0" name="actImport" nillable="true" type="q6:Act" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportActResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentSpecification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startTimeString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endTimeString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentSpecificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MainAPIWCF" minOccurs="0" name="GetPaymentSpecificationResult" nillable="true" type="q7:ArrayOfPaymentSpecificationItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndSupply">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="caseReferenceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndSupplyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExitReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="caseTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="startTimeString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endTimeString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExitReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MainAPIWCF" minOccurs="0" name="GetExitReportResult" nillable="true" type="q8:ArrayOfExitReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePaymentPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="versionNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="actId" type="xs:int" />
+        <xs:element minOccurs="0" name="debtorId" type="xs:int" />
+        <xs:element minOccurs="0" name="startTimeString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amountString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="debtIdsString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePaymentPlanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MainAPIWCF" minOccurs="0" name="CreatePaymentPlanResult" nillable="true" type="q9:ArrayOfPaymentPlanItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsNotificationStoredProceduresStillRunning">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsNotificationStoredProceduresStillRunningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsNotificationStoredProceduresStillRunningResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActionsToday">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActionsTodayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MainAPIWCF" minOccurs="0" name="GetActionsTodayResult" nillable="true" type="q10:ArrayOfUserAction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWNSChannelToken">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWNSChannelTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetWNSChannelTokenResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWNSChannelToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWNSChannelTokenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
